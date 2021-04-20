@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class Weapon {
 
     public void hitTheFoe() {
-        System.out.println("Hit that knife-ear.");
+        System.out.println("Attack!");
     }
 }
