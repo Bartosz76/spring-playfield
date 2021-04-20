@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="elf" class="bm.app.springplayfield.models.Elf"></bean>
-
+    <bean id="orc" class="bm.app.springplayfield.models.Orc"></bean>
 
 </beans>
