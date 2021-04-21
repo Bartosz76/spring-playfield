@@ -76,12 +76,24 @@ public class SpringPlayfieldApplication {
         printTheDivider();
 
         /**
-         * Human bean has Armour bean set as its property in the spring.xml. Due to being a reference type and not a primitive type, it's a ref instead of a value.
+         * Human bean has Armour bean set as its property in the spring.xml. Due to being a reference type and not a primitive type,
+         * it's a ref instead of a value.
          */
 
         Human human = (Human) contextNew.getBean("human");
         System.out.println("I am a human and bean armour is set as a property for me in the spring.xml file.");
         human.prepareForBattle();
+        printTheDivider();
+
+        /**
+         * Mavari's fields are set by constructor injection within spring.xml file. If I want to inject a value/ref like that,
+         * I need to have a constructor within the bean take in those values/refs as arguments.
+         * Setter injection can be used for optional variables and constructor injection for required ones.
+         */
+
+        Mavari mavari = (Mavari) contextNew.getBean("mavari");
+        System.out.println("I am a mavari and my fields are set by constructor injection in the spring.xml file.");
+        System.out.println("My height is " + mavari.getHeight());
         printTheDivider();
     }
 

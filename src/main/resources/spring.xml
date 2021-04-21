@@ -4,14 +4,24 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="elf" class="bm.app.springplayfield.models.Elf"></bean> <!--default scope singleton-->
+
     <bean id="orc" class="bm.app.springplayfield.models.Orc"></bean> <!--default scope singleton-->
+
     <bean id="gnome" class="bm.app.springplayfield.models.Gnome" scope="prototype"></bean>
+
     <bean id="ogre" class="bm.app.springplayfield.models.Ogre">
         <property name="age" value="10"></property>
     </bean>
+
     <bean id="human" class="bm.app.springplayfield.models.Human">
         <property name="armour" ref="armour"></property>
     </bean>
+
     <bean id="armour" class="bm.app.springplayfield.models.Armour"></bean>
+
+    <bean id="mavari" class="bm.app.springplayfield.models.Mavari">
+        <constructor-arg value="250"></constructor-arg>
+        <constructor-arg ref="armour"></constructor-arg>
+    </bean>
 
 </beans>
