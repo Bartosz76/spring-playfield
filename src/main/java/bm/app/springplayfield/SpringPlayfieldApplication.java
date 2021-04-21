@@ -3,6 +3,7 @@ package bm.app.springplayfield;
 import bm.app.springplayfield.models.Dwarf;
 import bm.app.springplayfield.models.Elf;
 import bm.app.springplayfield.models.Gnome;
+import bm.app.springplayfield.models.Ogre;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.boot.SpringApplication;
@@ -69,6 +70,13 @@ public class SpringPlayfieldApplication {
         System.out.println(anotherGnome.getAge());
         printTheDivider();
 
+        /**
+         * Ogre's default variable is set in spring.xml. By setting a default property there, I am making Spring Container call the setter.
+         */
+
+        Ogre ogre = (Ogre) contextNew.getBean("ogre");
+        System.out.println("I am an ogre and my default age was set as a bean property in spring.xml file. It is: " + ogre.getAge());
+        printTheDivider();
     }
 
     private static void printTheDivider() {
