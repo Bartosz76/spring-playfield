@@ -1,9 +1,6 @@
 package bm.app.springplayfield;
 
-import bm.app.springplayfield.models.Dwarf;
-import bm.app.springplayfield.models.Elf;
-import bm.app.springplayfield.models.Gnome;
-import bm.app.springplayfield.models.Ogre;
+import bm.app.springplayfield.models.*;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.boot.SpringApplication;
@@ -76,6 +73,15 @@ public class SpringPlayfieldApplication {
 
         Ogre ogre = (Ogre) contextNew.getBean("ogre");
         System.out.println("I am an ogre and my default age was set as a bean property in spring.xml file. It is: " + ogre.getAge());
+        printTheDivider();
+
+        /**
+         * Human bean has Armour bean set as its property in the spring.xml. Due to being a reference type and not a primitive type, it's a ref instead of a value.
+         */
+
+        Human human = (Human) contextNew.getBean("human");
+        System.out.println("I am a human and bean armour is set as a property for me in the spring.xml file.");
+        human.prepareForBattle();
         printTheDivider();
     }
 

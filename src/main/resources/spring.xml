@@ -9,5 +9,9 @@
     <bean id="ogre" class="bm.app.springplayfield.models.Ogre">
         <property name="age" value="10"></property>
     </bean>
+    <bean id="human" class="bm.app.springplayfield.models.Human">
+        <property name="armour" ref="armour"></property>
+    </bean>
+    <bean id="armour" class="bm.app.springplayfield.models.Armour"></bean>
 
 </beans>
