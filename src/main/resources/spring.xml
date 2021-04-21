@@ -3,7 +3,8 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="elf" class="bm.app.springplayfield.models.Elf"></bean>
-    <bean id="orc" class="bm.app.springplayfield.models.Orc"></bean>
+    <bean id="elf" class="bm.app.springplayfield.models.Elf"></bean> <!--default scope singleton-->
+    <bean id="orc" class="bm.app.springplayfield.models.Orc"></bean> <!--default scope singleton-->
+    <bean id="gnome" class="bm.app.springplayfield.models.Gnome" scope="prototype"></bean>
 
 </beans>

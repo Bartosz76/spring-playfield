@@ -6,7 +6,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class Elf {
 
-    public void attackTheFoe() {
-        System.out.println("Attack the dwarf!");
+    private int age = 123;
+
+    public Elf() {
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }
