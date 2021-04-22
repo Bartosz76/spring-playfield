@@ -24,4 +24,10 @@
         <constructor-arg ref="armour"></constructor-arg>
     </bean>
 
+    <bean id="troll" class="bm.app.springplayfield.models.Troll" autowire="byName">
+    </bean>
+
+    <bean id="pike" class="bm.app.springplayfield.models.Pike"></bean>
+    <bean id="javelin" class="bm.app.springplayfield.models.Javelin"></bean>
+
 </beans>

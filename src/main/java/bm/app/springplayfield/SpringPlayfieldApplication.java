@@ -95,6 +95,22 @@ public class SpringPlayfieldApplication {
         System.out.println("I am a mavari and my fields are set by constructor injection in the spring.xml file.");
         System.out.println("My height is " + mavari.getHeight());
         printTheDivider();
+
+        /**
+         * Troll bean has autowire set in spring.xml file to look 'byName'. Changing the name of the
+         * field in troll bean points spring which concrete implementation of interface Spear I want
+         * to use (be it a pike or a javelin). I also do not need to set spear as a property of the
+         * bean.
+         * I can set autowire to look 'byType' instead and then it won't look for the name, but the
+         * type.
+         * When I had both pike and javelin set as beans and told troll bean to autowire by type...
+         * it didn't want to do it, because the type of the variable in troll bean is the interface
+         * both classes share and Spring could not determine which implementation I looked for.
+         */
+
+        Troll troll = (Troll) contextNew.getBean("troll");
+        troll.armUp();
+        printTheDivider();
     }
 
     private static void printTheDivider() {
