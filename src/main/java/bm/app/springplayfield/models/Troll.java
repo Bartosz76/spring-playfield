@@ -2,17 +2,26 @@ package bm.app.springplayfield.models;
 
 public class Troll {
 
-    private Spear pike;
+    private int age;
+    private Spear weapon;
 
-    public Spear getPike() {
-        return pike;
+    public Spear getWeapon() {
+        return weapon;
     }
 
-    public void setPike(Spear pike) {
-        this.pike = pike;
+    public void setWeapon(Spear weapon) {
+        this.weapon = weapon;
     }
 
     public void armUp() {
-        pike.arm();
+        weapon.arm();
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
     }
 }

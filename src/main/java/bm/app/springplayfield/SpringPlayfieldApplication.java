@@ -106,6 +106,9 @@ public class SpringPlayfieldApplication {
          * When I had both pike and javelin set as beans and told troll bean to autowire by type...
          * it didn't want to do it, because the type of the variable in troll bean is the interface
          * both classes share and Spring could not determine which implementation I looked for.
+         * If I inject a property by setter, it will ignore the autowire.
+         * Adding a 'primary' to one of the available beans allows the 'byType' autowire to select
+         * a chosen one without further problems.
          */
 
         Troll troll = (Troll) contextNew.getBean("troll");
